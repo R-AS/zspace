@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import { Grid, Box, Grommet, ResponsiveContext } from 'grommet'
 import { deepMerge } from 'grommet/utils'
 import ResponsiveGrid from '@/components/ResponsiveGrid';
@@ -30,6 +31,14 @@ const theme  = deepMerge({
 
 
 const Home = () => {
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     site {
+
+  //     }
+  //   }
+  // `)
+
   return (
     <Grommet theme={theme} full>
       <ResponsiveContext.Consumer>
