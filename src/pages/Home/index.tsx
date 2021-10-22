@@ -1,43 +1,16 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import { Grid, Box, Grommet, ResponsiveContext } from 'grommet'
-import { deepMerge } from 'grommet/utils'
-import ResponsiveGrid from '@/components/ResponsiveGrid';
+import ResponsiveGrid from '@/components/ResponsiveGrid'
+import { makeStyle } from '@/utils/theme'
 
-const theme  = deepMerge({
-  global: {
-    colors: {
-      brand: 'white',
-      dark: "blue",
-    },
-    font: {
-      size: '20px',
-      height: '20px',
-    },
-    breakpoints: {
-      xsmall: {
-        value: 500,
-      },
-      small: {
-        value: 900,
-      },
-      medium: undefined,
-      middle: {
-        value: 3000,
-      },
-    },
+const useStyle = makeStyle(() => ({
+  red: {
+    backgroundColor: 'red',
   },
-});
-
+}))
 
 const Home = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     site {
-
-  //     }
-  //   }
-  // `)
+  const [styles, theme] = useStyle()
 
   return (
     <Grommet theme={theme} full>
@@ -75,7 +48,7 @@ const Home = () => {
               ]
             }}
             >
-            <Box gridArea="one" background="green" />
+            <Box gridArea="one" style={styles.red} />
             <Box gridArea="two" background="red" />
             <Box gridArea="three" background="blue" />
             <Box gridArea="four" background="cyan" />
