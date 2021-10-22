@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Box, Grommet, ResponsiveContext } from 'grommet'
 import { deepMerge } from 'grommet/utils'
-import ResponsiveGrid from '../../components/ResponsiveGrid'
+import ResponsiveGrid from '@/components/ResponsiveGrid';
 
 const theme  = deepMerge({
   global: {
